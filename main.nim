@@ -15,10 +15,10 @@ when isMainModule:
     h: uint = ds[uint(floor(ds.len / 2))]
   var img: Image = newImage(w.int, h.int)
 
-  for i in 0..w*h - 1:
-    img.data[i].r = chars[i].uint8
-    img.data[i].g = chars[i].uint8
-    img.data[i].b = chars[i].uint8
+  for i in 0..w * h - 1:
+    img.data[i].r = uint8(chars[i])
+    img.data[i].g = uint8(chars[i])
+    img.data[i].b = uint8(chars[i])
     img.data[i].a = 255
 
 "main.png".writeFile(img.encodeImage(PngFormat))
